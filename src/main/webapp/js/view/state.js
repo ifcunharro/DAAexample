@@ -8,7 +8,7 @@ function insertStateList(parent) {
 		'<table id="' + stateListId + '">\
 			<tr>\
 				<th>Calle</th>\
-				<th>Número</th>\
+				<th>Numero</th>\
 				<th>Localidad</th>\
 				<th>Provincia</th>\
 				<th></th>\
@@ -35,7 +35,7 @@ function insertStateForm(parent) {
 function createAddressRow(address) {
 	return '<tr id="address-'+ address.id +'">\
 		<td class="street">' + address.street + '</td>\
-		<td class="number"><right>' + address.number + '</right></td>\
+		<td class="number">' + address.number + '</td>\
 		<td class="locality">' + address.locality + '</td>\
 		<td class="province">' + address.province + '</td>\
 		<td>\
