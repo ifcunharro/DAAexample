@@ -23,7 +23,7 @@ function insertStateForm(parent) {
 		'<form id="' + stateFormId + '">\
 			<input name="id" type="hidden" value=""/>\
 			<input name="street" type="text" value="" />\
-			<input align="right" name="number" type="text" value=""/>\
+			<input name="number" type="text" value=""/>\
 			<input name="locality" type="text" value=""/>\
 			<input name="province" type="text" value=""/>\
 			<input id="btnSubmit" type="submit" value="Create"/>\
@@ -35,7 +35,7 @@ function insertStateForm(parent) {
 function createAddressRow(address) {
 	return '<tr id="address-'+ address.id +'">\
 		<td class="street">' + address.street + '</td>\
-		<td class="number">' + address.number + '</td>\
+		<td class="number"><right>' + address.number + '</right></td>\
 		<td class="locality">' + address.locality + '</td>\
 		<td class="province">' + address.province + '</td>\
 		<td>\
