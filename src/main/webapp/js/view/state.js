@@ -23,7 +23,7 @@ function insertStateForm(parent) {
 		'<form id="' + stateFormId + '">\
 			<input name="id" type="hidden" value=""/>\
 			<input name="street" type="text" value="" />\
-			<input name="number" type="text" value=""/>\
+			<input align="right" name="number" type="text" value=""/>\
 			<input name="locality" type="text" value=""/>\
 			<input name="province" type="text" value=""/>\
 			<input id="btnSubmit" type="submit" value="Create"/>\
