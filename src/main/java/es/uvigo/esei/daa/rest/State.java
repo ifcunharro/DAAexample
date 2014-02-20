@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import es.uvigo.esei.daa.dao.DAOException;
 import es.uvigo.esei.daa.dao.StateDAO;
 
-@Path("/people")
+@Path("/state")
 @Produces(MediaType.APPLICATION_JSON)
 public class State {
 	private final StateDAO dao;
