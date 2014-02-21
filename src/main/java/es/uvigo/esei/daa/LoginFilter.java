@@ -36,6 +36,7 @@ public class LoginFilter implements Filter {
 			} else if (isRestPath(httpRequest)) {
 				httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN);				
 			} else {
+				removeTokenCookie(httpResponse);
 				redirectToIndex(httpRequest, httpResponse);
 			}
 		} catch (IllegalArgumentException iae) {
