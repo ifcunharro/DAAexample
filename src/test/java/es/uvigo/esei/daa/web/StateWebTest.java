@@ -13,28 +13,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+//puesto por mi este chrome
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import es.uvigo.esei.daa.TestUtils;
+import es.uvigo.esei.daa.TestStateUtils;
 
-public class PeopleWebTest {
+public class StateWebTest {
 	private static final int DEFAULT_WAIT_TIME = 1;
 	private WebDriver driver;
 	private StringBuffer verificationErrors = new StringBuffer();
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		TestUtils.createFakeContext();
+		TestStateUtils.createFakeContext();
 	}
 	
 	@Before
 	public void setUp() throws Exception {
-		TestUtils.initTestDatabase();
+		TestStateUtils.initTestDatabase();
 		
-		final String baseUrl = "http://localhost:9080/DAAExample/";
+		final String baseUrl = "http://localhost:8080/DAAExample/";
 		
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 		driver.get(baseUrl);
 		driver.manage().addCookie(new Cookie("token", "bXJqYXRvOm1yamF0bw=="));
 		
@@ -42,12 +44,12 @@ public class PeopleWebTest {
 		driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_TIME, TimeUnit.SECONDS);
 		
 		driver.get(baseUrl + "main.html");
-		driver.findElement(By.id("people-list"));
+		driver.findElement(By.id("state-list"));
 	}
 	
 	@After
 	public void tearDown() throws Exception {
-		TestUtils.clearTestDatabase();
+		TestStateUtils.clearTestDatabase();
 		
 		driver.quit();
 		String verificationErrorString = verificationErrors.toString();
@@ -58,50 +60,77 @@ public class PeopleWebTest {
 
 	@Test
 	public void testList() throws Exception {
-		verifyXpathCount("//tr", 11);
+		verifyXpathCount("//tr", 4);
 	}
 
 	@Test
 	public void testAdd() throws Exception {
-		final String name = "Hola";
-		final String surname = "Mundo";
+		final String street = "Hola";
+		final String number = "60";
+		final String locality = "Mundo";
+		final String province = "Iago";
 		
-		driver.findElement(By.name("name")).clear();
-		driver.findElement(By.name("name")).sendKeys(name);
-		driver.findElement(By.name("surname")).clear();
-		driver.findElement(By.name("surname")).sendKeys(surname);
+		driver.findElement(By.name("street")).clear();
+		driver.findElement(By.name("street")).sendKeys(street);
+		driver.findElement(By.name("number")).clear();
+		driver.findElement(By.name("number")).sendKeys(number);
+		driver.findElement(By.name("locality")).clear();
+		driver.findElement(By.name("locality")).sendKeys(locality);
+		driver.findElement(By.name("province")).clear();
+		driver.findElement(By.name("province")).sendKeys(province);
 		driver.findElement(By.id("btnSubmit")).click();
 		driver.findElement(By.xpath("//td[text()='Hola']"));
 		
-		assertEquals(name, 
-			driver.findElement(By.cssSelector("tr:last-child > td.name")).getText()
+		assertEquals(street, 
+			driver.findElement(By.cssSelector("tr:last-child > td.street")).getText()
 		);
-		assertEquals(surname, 
-			driver.findElement(By.cssSelector("tr:last-child > td.surname")).getText()
+		assertEquals(number, 
+			driver.findElement(By.cssSelector("tr:last-child > td.number")).getText()
+		);
+		assertEquals(locality, 
+				driver.findElement(By.cssSelector("tr:last-child > td.locality")).getText()
+		);
+		assertEquals(province, 
+				driver.findElement(By.cssSelector("tr:last-child > td.province")).getText()
 		);
 	}
 
 	@Test
 	public void testEdit() throws Exception {
-		final String name = "Xián";
-		final String surname = "Ximénez";
+		final String street = "Hola";
+		final String number = "60";
+		final String locality = "Mundo";
+		final String province = "Iago";
 		
 		final String trId = driver.findElement(By.xpath("//tr[last()]")).getAttribute("id");
 		driver.findElement(By.xpath("//tr[@id='" + trId + "']//a[text()='Edit']")).click();
-		driver.findElement(By.name("name")).clear();
-		driver.findElement(By.name("name")).sendKeys(name);
-		driver.findElement(By.name("surname")).clear();
-		driver.findElement(By.name("surname")).sendKeys(surname);
+		driver.findElement(By.name("street")).clear();
+		driver.findElement(By.name("street")).sendKeys(street);
+		driver.findElement(By.name("number")).clear();
+		driver.findElement(By.name("number")).sendKeys(number);
+		driver.findElement(By.name("locality")).clear();
+		driver.findElement(By.name("locality")).sendKeys(locality);
+		driver.findElement(By.name("province")).clear();
+		driver.findElement(By.name("province")).sendKeys(province);
 		driver.findElement(By.id("btnSubmit")).click();
-		waitForTextInElement(By.name("name"), "");
-		waitForTextInElement(By.name("surname"), "");
+		waitForTextInElement(By.name("street"), "");
+		waitForTextInElement(By.name("number"), "");
+		waitForTextInElement(By.name("locality"), "");
+		waitForTextInElement(By.name("province"), "");
 		
-		assertEquals(name, 
-			driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='name']")).getText()
+		assertEquals(street, 
+			driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='street']")).getText()
 		);
-		assertEquals(surname, 
-			driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='surname']")).getText()
+		assertEquals(number, 
+			driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='number']")).getText()
 		);
+		assertEquals(locality, 
+				driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='locality']")).getText()
+		);
+		assertEquals(province, 
+				driver.findElement(By.xpath("//tr[@id='" + trId + "']/td[@class='province']")).getText()
+		);
+		
 	}
 
 	@Test
