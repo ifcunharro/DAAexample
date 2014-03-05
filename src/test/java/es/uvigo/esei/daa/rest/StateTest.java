@@ -71,13 +71,13 @@ public class StateTest extends JerseyTest {
 
 	@Test
 	public void testGet() throws IOException {
-		final Response response = target("state/1").request().get();
+		final Response response = target("state/2").request().get();
 		assertOkStatus(response);
 		
 		final Address address = response.readEntity(Address.class);
-		assertEquals(1, address.getId());
-		assertEquals("Principal", address.getStreet());
-		assertEquals(21, address.getNumber());
+		assertEquals(2, address.getId());
+		assertEquals("Joaquin Loriga", address.getStreet());
+		assertEquals(5, address.getNumber());
 		assertEquals("Lalin", address.getLocality());
 		assertEquals("Pontevedra", address.getProvince());
 	}
