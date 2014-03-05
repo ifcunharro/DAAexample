@@ -19,14 +19,14 @@ public final class TestStateUtils {
 
 	public static void createFakeContext() throws NamingException {
 		final SimpleNamingContextBuilder builder = new SimpleNamingContextBuilder();
-		builder.bind("java:/comp/env/jdbc/daaexampletest", createTestingDataSource());
+		builder.bind("java:/comp/env/jdbc/daaexample", createTestingDataSource());
 		builder.activate();
 	}
 
 	private static BasicDataSource createTestingDataSource() {
 		final BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/daaexampletest?allowMultiQueries=true");
+		ds.setUrl("jdbc:mysql://localhost:3306/daaexample?allowMultiQueries=true");
 		ds.setUsername("daa");
 		ds.setPassword("daa");
 		ds.setMaxActive(100);
