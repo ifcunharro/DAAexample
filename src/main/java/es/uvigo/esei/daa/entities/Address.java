@@ -3,7 +3,7 @@ package es.uvigo.esei.daa.entities;
 public class Address {
 	private int id;
 	private String street;
-	private int number;
+	private long number;
 	private String locality;
 	private String province;
 	
@@ -34,11 +34,11 @@ public class Address {
 		this.street = street;
 	}
 	
-	public int getNumber() {
+	public long getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(long number) {
 		this.number = number;
 	}
 
