@@ -12,8 +12,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-//puesto por mi este chrome
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -35,7 +35,7 @@ public class StateWebTest {
 		
 		final String baseUrl = "http://localhost:8080/DAAExample/";
 		
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		driver.get(baseUrl);
 		driver.manage().addCookie(new Cookie("token", "bXJqYXRvOm1yamF0bw=="));
 		
