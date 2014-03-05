@@ -42,7 +42,7 @@ public class StateWebTest {
 		// Driver will wait DEFAULT_WAIT_TIME if it doesn't find and element.
 		driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_TIME, TimeUnit.SECONDS);
 		
-		driver.get(baseUrl + "main.html");
+		driver.get(baseUrl + "Address.html");
 		driver.findElement(By.id("state-list"));
 	}
 	
