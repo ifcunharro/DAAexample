@@ -33,7 +33,7 @@ public class StateDAOTest {
 	@Test
 	public void testGet() throws DAOException {
 		final Address address = this.dao.get(2);
-		System.out.println(address.getStreet());
+		
 		assertEquals(2, address.getId());
 		assertEquals("Joaquin Loriga", address.getStreet());
 		assertEquals(5, address.getNumber());
