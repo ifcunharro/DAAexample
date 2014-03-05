@@ -1,18 +1,18 @@
 DROP TABLE IF EXISTS `people`;
 CREATE TABLE `people` (
 	`id` int NOT NULL AUTO_INCREMENT,
-	`name` varchar(50) DEFAULT NULL,
-	`surname` varchar(100) DEFAULT NULL,
+	`name` varchar(50) NOT NULL,
+	`surname` varchar(100) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
 DROP TABLE IF EXISTS `state`;
 CREATE TABLE `state` (
 	`id` int NOT NULL AUTO_INCREMENT,
-	`street` varchar(100) DEFAULT NULL,
-	`number` int DEFAULT NULL,
-	`locality` varchar(100) DEFAULT NULL,
-	`province` varchar(60) DEFAULT NULL,
+	`street` varchar(100) NOT NULL,
+	`number` int NOT NULL,
+	`locality` varchar(100) NOT NULL,
+	`province` varchar(60) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
