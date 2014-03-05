@@ -46,7 +46,7 @@ public class StateDAOTest {
 		this.dao.get(100);
 	}
 
-	/*@Test
+	@Test
 	public void testList() throws DAOException {
 		assertEquals(3, this.dao.list().size());
 	}
@@ -137,5 +137,5 @@ public class StateDAOTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testAddNullProvince() throws DAOException {
 		this.dao.add("John", 30,"Castellon",null);
-	}*/
+	}
 }
