@@ -23,15 +23,15 @@ CREATE TABLE `users` (
 	PRIMARY KEY (`login`)
 );
 
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Anton', '¡lvarez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Anton', '√Ålvarez');
 INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Ana', 'Amargo');
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Manuel', 'MartÌnez');
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Mara', 'M·rquez');
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Lorenzo', 'LÚpez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Manuel', 'Mart√≠nez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Mara', 'M√°rquez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Lorenzo', 'L√≥pez');
 INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Laura', 'Laredo');
 INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Perico', 'Palotes');
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Patricia', 'PËrez');
-INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Juan', 'JimËnez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Patricia', 'P√©rez');
+INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Juan', 'Jim√©nez');
 INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Julia', 'Justa');
 
 
