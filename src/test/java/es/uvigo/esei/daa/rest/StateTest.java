@@ -1,7 +1,7 @@
 package es.uvigo.esei.daa.rest;
 
-import static es.uvigo.esei.daa.TestUtils.assertOkStatus;
-import static es.uvigo.esei.daa.TestUtils.assertBadRequestStatus;
+import static es.uvigo.esei.daa.TestStateUtils.assertOkStatus;
+import static es.uvigo.esei.daa.TestStateUtils.assertBadRequestStatus;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -188,7 +188,7 @@ public class StateTest extends JerseyTest {
 	@Test
 	public void testModifyStreet() throws IOException {
 		final Form form = new Form();
-		form.param("street", "Iago");
+		form.param("street", "Joaquin Loriga");
 		
 		final Response response = target("state/2")
 			.request(MediaType.APPLICATION_JSON_TYPE)
@@ -200,7 +200,7 @@ public class StateTest extends JerseyTest {
 	@Test
 	public void testModifyNumber() throws IOException {
 		final Form form = new Form();
-		form.param("number", "100");
+		form.param("number", "13");
 		
 		final Response response = target("state/2")
 			.request(MediaType.APPLICATION_JSON_TYPE)
@@ -212,7 +212,7 @@ public class StateTest extends JerseyTest {
 	@Test
 	public void testModifyLocality() throws IOException {
 		final Form form = new Form();
-		form.param("locality", "Madrid");
+		form.param("locality", "Lalin");
 		
 		final Response response = target("state/2")
 			.request(MediaType.APPLICATION_JSON_TYPE)
@@ -224,7 +224,7 @@ public class StateTest extends JerseyTest {
 	@Test
 	public void testModifyProvince() throws IOException {
 		final Form form = new Form();
-		form.param("province", "province");
+		form.param("province", "Pontevedra");
 		
 		final Response response = target("state/2")
 			.request(MediaType.APPLICATION_JSON_TYPE)

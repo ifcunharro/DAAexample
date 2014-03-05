@@ -67,7 +67,7 @@ public final class TestStateUtils {
 			.append("INSERT INTO `people` (`id`,`name`,`surname`) VALUES (0, 'Julia', 'Justa');")
 			.append("INSERT INTO `state` (`id`,`street`,`number`,`locality`,`province`) VALUES (0,'Principal',21,'Lalin','Pontevedra');")
 			.append("INSERT INTO `state` (`id`,`street`,`number`,`locality`,`province`) VALUES (0,'Joaquin Loriga',5,'Lalin','Pontevedra');")
-			.append("INSERT INTO `state` (`id`,`street`,`number`,`locality`,`province`) VALUES (0,'Perico',200,'Lol','MilÃ¡n');)")
+			.append("INSERT INTO `state` (`id`,`street`,`number`,`locality`,`province`) VALUES (0,'Perico',200,'Lol','MilÃ¡n');")
 			.append("INSERT INTO `users` (`login`,`password`) VALUES ('mrjato', '59189332a4abf8ddf66fde068cad09eb563b4bd974f7663d97ff6852a7910a73');")
 		.toString();
 
