@@ -35,7 +35,7 @@ public class PeopleDAOTest {
 		final Person person = this.dao.get(4);
 		
 		assertEquals(4, person.getId());
-		assertEquals("María", person.getName());
+		assertEquals("Mar�a", person.getName());
 		assertEquals("Márquez", person.getSurname());
 	}
 
